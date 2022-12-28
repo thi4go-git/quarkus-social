@@ -59,5 +59,4 @@ public class UsuarioServiceImpl implements UsuarioService {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-
 }

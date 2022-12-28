@@ -9,8 +9,8 @@ import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.transform.Source;
-import javax.xml.validation.Validator;
+
+
 
 @Path("/usuarios")// Define o caminho da API rest
 @Consumes(MediaType.APPLICATION_JSON)// informamos que será consumido o JSON na aplicação.
@@ -39,7 +39,7 @@ public class UsuarioController {
 
     @PUT
     @Path("{id}")
-    public Response atualizarUsuario(@PathParam("id") Long id, UsuarioDTO dto) {
+    public Response atualizarUsuario(@PathParam("id") Long id, @Valid UsuarioDTO dto) {
         return service.atualizarUsuario(id, dto);
     }
 
