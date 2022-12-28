@@ -5,9 +5,12 @@ import br.com.social.rest.dto.UsuarioDTO;
 import br.com.social.service.impl.UsuarioServiceImpl;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.transform.Source;
+import javax.xml.validation.Validator;
 
 @Path("/usuarios")// Define o caminho da API rest
 @Consumes(MediaType.APPLICATION_JSON)// informamos que será consumido o JSON na aplicação.
@@ -18,7 +21,8 @@ public class UsuarioController {
     private UsuarioServiceImpl service;
 
     @POST
-    public Response salvarUser(UsuarioDTO dto) {
+    public Response salvarUser(@Valid UsuarioDTO dto) {
+
         return service.salvarUser(dto);
     }
 
