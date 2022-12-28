@@ -7,4 +7,10 @@ import javax.ws.rs.core.Response;
 
 public interface UsuarioService {
     Response salvarUser(UsuarioDTO dto);
+
+    Response listarTodos();
+
+    Response deletarUsuario(Long id);
+
+    Response atualizarUsuario(Long id, UsuarioDTO dto);
 }
