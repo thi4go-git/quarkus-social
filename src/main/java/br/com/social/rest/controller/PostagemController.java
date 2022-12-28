@@ -18,10 +18,16 @@ public class PostagemController {
     @Inject
     private PostagemServiceImpl postagemService;
 
+    @POST
     public Response salvarPostagem(
             @PathParam("userId") Long userId, PostagemDTO dto
     ) {
-        return postagemService.salvarPostagem(dto);
+        return postagemService.salvarPostagem(userId, dto);
+    }
+
+    @GET
+    public Response listarTodos(@PathParam("userId") Long userId) {
+        return postagemService.listarPostsUser(userId);
     }
 
 }

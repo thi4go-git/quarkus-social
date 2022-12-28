@@ -6,5 +6,7 @@ import javax.ws.rs.core.Response;
 
 public interface PostagemService {
 
-    Response salvarPostagem(PostagemDTO dto);
+    Response salvarPostagem(Long idUser, PostagemDTO dto);
+
+    Response listarPostsUser( Long userId);
 }

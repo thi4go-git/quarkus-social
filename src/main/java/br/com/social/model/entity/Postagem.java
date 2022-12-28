@@ -28,9 +28,9 @@ public class Postagem {
     @JoinColumn(nullable = false, name = "user_id")
     private Usuario usuario;
 
-    public Postagem(String texto, LocalDateTime data_postagem, Usuario usuario) {
-        this.usuario = usuario;
+    public Postagem(String texto, Usuario usuario) {
         this.texto = texto;
+        this.usuario = usuario;
         this.data_postagem = LocalDateTime.now();
     }
 
