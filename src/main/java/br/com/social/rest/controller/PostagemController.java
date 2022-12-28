@@ -1,10 +1,10 @@
 package br.com.social.rest.controller;
 
 import br.com.social.rest.dto.PostagemDTO;
-import br.com.social.service.PostagemService;
 import br.com.social.service.impl.PostagemServiceImpl;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,7 +20,7 @@ public class PostagemController {
 
     @POST
     public Response salvarPostagem(
-            @PathParam("userId") Long userId, PostagemDTO dto
+            @PathParam("userId") Long userId, @Valid PostagemDTO dto
     ) {
         return postagemService.salvarPostagem(userId, dto);
     }

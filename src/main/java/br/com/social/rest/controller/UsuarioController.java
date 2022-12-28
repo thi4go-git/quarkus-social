@@ -22,7 +22,6 @@ public class UsuarioController {
 
     @POST
     public Response salvarUser(@Valid UsuarioDTO dto) {
-
         return service.salvarUser(dto);
     }
 
